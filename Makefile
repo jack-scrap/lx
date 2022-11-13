@@ -1,3 +1,5 @@
+EXEC=a.out
+
 CXX=g++
 
 SRC=main.cpp disp.cpp prog.cpp util.cpp
@@ -9,7 +11,7 @@ LDFLAGS+=$(SDL)
 LDFLAGS+=$(GL)
 
 .PHONY: all
-all: a.out
+all: $(EXEC)
 
 %.o: %.cpp %.h
 	$(CXX) -c $< -o $@ $(LDFLAGS)
@@ -17,9 +19,9 @@ all: a.out
 main.o: main.cpp
 	$(CXX) -c $< -o $@ $(LDFLAGS)
 
-a.out: $(OBJ)
+$(EXEC): $(OBJ)
 	$(CXX) $^ $(LDFLAGS) -o $@
 
 .PHONY: clean
 clean:
-	rm *.o a.out
+	rm *.o $(EXEC)
