@@ -18,7 +18,7 @@ main.o: main.cpp
 	$(CXX) -c $< -o $@ $(LDFLAGS)
 
 a.out: $(OBJ)
-	$(CXX) $^ $(LDFLAGS)
+	$(CXX) $^ $(LDFLAGS) -o $@
 
 .PHONY: clean
 clean:
