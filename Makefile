@@ -1,4 +1,4 @@
-EXEC=a.out
+EXEC=std_rend
 
 CXX=g++
 
