@@ -11,10 +11,10 @@ LDFLAGS=-lGLEW -lGL -lSDL2
 all: $(EXEC)
 
 %.o: %.cpp %.h
-	$(CXX) -c $< -o $@ $(LDFLAGS)
+	$(CXX) -c $< -o $@
 
 main.o: main.cpp
-	$(CXX) -c $< -o $@ $(LDFLAGS)
+	$(CXX) -c $< -o $@
 
 $(EXEC): $(OBJ)
 	$(CXX) $^ -o $@ $(LDFLAGS) 
