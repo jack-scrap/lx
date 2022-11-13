@@ -5,10 +5,7 @@ CXX=g++
 SRC=main.cpp disp.cpp prog.cpp util.cpp
 OBJ=$(SRC:%.cpp=%.o)
 
-GL=-lGLEW -lGL
-SDL=-lSDL2
-LDFLAGS+=$(SDL)
-LDFLAGS+=$(GL)
+LDFLAGS=-lGLEW -lGL -lSDL2
 
 .PHONY: all
 all: $(EXEC)
