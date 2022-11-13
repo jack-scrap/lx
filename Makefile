@@ -7,7 +7,7 @@ BUILDDIR=build
 SRC=main.cpp disp.cpp prog.cpp util.cpp
 OBJ=$(SRC:%.cpp=$(BUILDDIR)/%.o)
 
-LDFLAGS=-lGLEW -lGL -lSDL2
+LDFLAGS=-lSDL2 -lGLEW -lGL
 
 .PHONY: all
 all: mk_build $(EXEC)
