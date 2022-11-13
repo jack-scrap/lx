@@ -17,7 +17,7 @@ main.o: main.cpp
 	$(CXX) -c $< -o $@ $(LDFLAGS)
 
 $(EXEC): $(OBJ)
-	$(CXX) $^ $(LDFLAGS) -o $@
+	$(CXX) $^ -o $@ $(LDFLAGS) 
 
 .PHONY: clean
 clean:
