@@ -6,24 +6,18 @@
 #include "disp.h"
 #include "prog.h"
 #include "util.h"
+#include "mesh.h"
 
 int main() {
 	Disp disp("Standard Renderer", 800, 600);
-
-	GLuint vao;
-	glGenVertexArrays(1, &vao);
-	glBindVertexArray(vao);
-
-	GLuint vbo;
-	glGenBuffers(1, &vbo);
-	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
 	GLfloat vtc[3 * 3] = {
 		-1.0, -1.0, 0.0,
 		1.0, -1.0, 0.0,
 		0.0, 1.0, 0.0
 	};
-	glBufferData(GL_ARRAY_BUFFER, sizeof vtc, vtc, GL_STATIC_DRAW);
+
+	Mesh mesh(vtc, sizeof vtc / sizeof *vtc);
 
 	Prog prog("shad", "shad");
 
@@ -47,7 +41,4 @@ int main() {
 
 		disp.update();
 	}
-
-	glDeleteBuffers(1, &vao);
-	glDeleteBuffers(1, &vbo);
 }
